@@ -17,3 +17,7 @@ Daily purposrse
     > git add . 
 3. git commit -m "js fundamentals"  
 4. git push
+
+
+to clone others repo
+> git clone https://github.com/sagartmg2/magh-2
