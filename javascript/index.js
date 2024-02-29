@@ -56,7 +56,10 @@ for (let index = 0; index < 3; index++) {
 }
 
 
-function findMultiplication(){
+function findMultiplication(input){
+
+  /* code to find multiplication of given input */
+
    /*  
     5 * 1 = 5  to 5 * 10  = 50
     5 * 1 = 5  to 5 * 10  = 50
