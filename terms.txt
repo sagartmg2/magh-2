@@ -1,0 +1,9 @@
+element/tag
+    eg: <html>
+
+attribute
+    eg: id, class 
+
+comment
+    to describe your complex code
+    ctlr + /
