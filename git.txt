@@ -12,5 +12,8 @@ Inital one time setup
 
 Daily purposrse
 1. git status ( optional )
-2. git add .  
+2. add the files now 
+    > git add <filename>
+    > git add . 
 3. git commit -m "js fundamentals"  
+4. git push
