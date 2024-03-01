@@ -21,3 +21,9 @@ Daily purposrse
 
 to clone others repo
 > git clone https://github.com/sagartmg2/magh-2
+
+to creatre new branch
+git checkout master
+    then only
+        > git checkout -b login   // login is new branch 
+ 
