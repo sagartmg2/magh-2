@@ -1,118 +1,94 @@
-function findMultiplication(filterObj) {
-  /* 
-    object destructuring
+// let websiteUrl = "https://mindrises-development.vercel.app";
+let websiteUrl = "https://mindrisers.com.np/";
 
-    let input = filterObj.input;
-    let startFrom = filterObj.startFrom;
-    let endAt = filterObj.endAt;
-
-   */
-
-  let { input, startFrom, endAt } = filterObj;
-
-  for (let startingPoint = startFrom; startingPoint <= endAt; startingPoint++) {
-    let result = input * startingPoint;
-    console.log(`${input} * ${startingPoint} = ${result} `);
-  }
-}
-
-// findMultiplication(10, 5, 10);
-// findMultiplication(12, 1, 5);
-
-findMultiplication({
-  input: 10,
-  startFrom: 5,
-  endAt: 10,
-});
-
-findMultiplication({
-  input: 12,
-  startFrom: 1,
-  endAt: 5,
-});
-
-let numbers = [1, 2, 3, 4, 5];
-numbers[0] = numbers[0] * 2;
-numbers[1] = numbers[1] * 2;
-numbers[2] = numbers[2] * 2;
-numbers[3] = numbers[3] * 2;
-numbers[4] = numbers[4] * 2;
-
-console.log(numbers); // [2,3,6,8,10]
-
-
-let brands = ["apple", "samsung", "lg", "sony"];
-
-let companies = [
+let blogs = [
   {
-    name:"mindrisers",
-    url:"www.midrisers.com"
+    title: "Web Designing Training in Putalisadak, Kathmandu",
+    image:
+      "/static/Images/blog/single_post/Web_Designing_Training_in_Putalisadak_Kathmandu.jpg",
   },
   {
-    name:"leapfrog",
-    url:"www.leapfrog.com"
+    title: "Graphic Designing Training in Putalisadak, Kathmandu | Mindrisers",
+    image:
+      "/static/Images/blog/single_post/Graphic_Designing_Training_in_Putalisadak_Kathmandu__Mindrisers.png",
   },
   {
-    name:"cotiviti",
-    url:"www.cotivity.com"
-  },
-]
-
-
-/*
-  url of mindrisers is www.mindrisers.com
-  url of leapfrog is www.leapfrog.com
-  url of cotiviti is www.cotivity.com
- */
-
-let users = [
-  {
-    name: "ram",
-    cartItems: [
-      {
-        product_id: 1,
-        price: 100,
-        quantity: 2,
-      },
-      {
-        product_id: 2,
-        price: 300,
-        quantity: 2,
-      },
-    ],
+    title:
+      "Data Science with Python Training in Putalisadak, Kathmandu | Mindrisers",
+    image:
+      "/static/Images/blog/single_post/Data_Science_with_Python_Training_in_Putalisadak_Kathmandu.jpg",
   },
   {
-    name: "hari",
-    cartItems: [
-      {
-        product_id: 3,
-        price: 100,
-        quantity: 2,
-      },
-      {
-        product_id: 4,
-        price: 300,
-        quantity: 2,
-      },
-    ],
+    title: "UI/UX Training in Putalisadak, Kathmandu | Mindrisers",
+    image:
+      "/static/Images/blog/single_post/UIUX_Training_in_Putalisadak_Kathmandu__Mindrisers.png",
+  },
+  {
+    title: "Flutter Training in Putalisadak, Kathmandu | Mindrisers",
+    image:
+      "/static/Images/blog/single_post/Flutter_Training_in_Putalisadak_Kathmandu_Mindrisers.png",
+  },
+  {
+    title: "DevOps Training in Putalisadak, Kathmandu | Mindrisers",
+    image:
+      "/static/Images/blog/single_post/DevOps_Training_in_Putalisadak_Kathmandu__Mindrisers.png",
   },
 ];
 
-/* ram has orderded of rs 800  */
-/* hari has orderded of rs ...  */
+/* TODO: code here . each image in blogs should have websiteUrl attached in its prefix   */
+// console.log(blogs);
 
-
-
-for (let index = 0; index < numbers.length; index++) {
-  numbers[index] = numbers[index] * 2;
+function makeFullUrl(suffixUrl) {
+  return `${websiteUrl}${suffixUrl}`;
 }
 
-// numbers[0] = numbers[0] * 2;
-// numbers[1] = numbers[1] * 2;
-// numbers[2] = numbers[2] * 2;
-// numbers[3] = numbers[3] * 2;
-// numbers[4] = numbers[4] * 2;
+for (let index = 0; index < blogs.length; index++) {
+  //   let fullUrl = `${websiteUrl}${blogs[index].image}`;
+  
+  let fullUrl = makeFullUrl(blogs[index].image);
+  console.log(fullUrl);
 
-/*  code here to double the element of number  */
+  //   blogs[index].image = makeFullUrl(blogs[index].image)
+}
 
-console.log(numbers); //expected output: [2,4,6,8,10]
+let courses = [
+  {
+    title: "MERN Stack Training in Nepal",
+    image: "/static/Images/courses/banner/mern-banner-min_nplbrgN.jpg",
+  },
+  {
+    title: "Python with Django Training in Nepal",
+    image: "/static/Images/courses/banner/python-banner-min_7hCoIdR.jpg",
+  },
+  {
+    title: "Digital Marketing Training in Nepal",
+    image:
+      "/static/Images/courses/banner/DIGITAL-MARKETING-banner-min_JBHENk4.webp",
+  },
+  {
+    title: "Quality Assurance Training in Nepal",
+    image: "/static/Images/courses/banner/qa-banner-min_l0DzbAP.jpg",
+  },
+  {
+    title: "Graphic Design Training in Nepal",
+    image: "/static/Images/courses/banner/banner11-min_6ANDad7.png",
+  },
+  {
+    title: "Flutter Training in Nepal",
+    image: "/static/Images/courses/banner/flutter-banner-min_DUDTPdH.jpg",
+  },
+  {
+    title: "DevOps Training in Nepal",
+    image: "/static/Images/courses/banner/DevOps_Training.png",
+  },
+];
+
+
+for (let index = 0; index < courses.length; index++) {
+    //   let fullUrl = `${websiteUrl}${courses[index].image}`;
+
+    //   let fullUrl = makeFullUrl(courses[index].image);
+    //   console.log(fullUrl);
+
+    courses[index].image = makeFullUrl(courses[index].image)
+}
