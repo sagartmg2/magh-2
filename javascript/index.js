@@ -1,94 +1,76 @@
-// let websiteUrl = "https://mindrises-development.vercel.app";
-let websiteUrl = "https://mindrisers.com.np/";
+/* if else */
+/* loop */
+/* function - return */
 
-let blogs = [
+let numbers = [6, 5, 4, 3, 2, 1, 0];
+let evenNumbers = [];
+
+/* hints
+
+    modolous %
+ */
+
+for (let index = 0; index < numbers.length; index++) {
+  if (numbers[index] % 2 === 0) {
+    console.log(numbers[index]);
+    evenNumbers.push(numbers[index]);
+  }
+}
+
+for (let index = 0; index < numbers.length; index++) {
+  let element = numbers[index];
+  if (element % 2 === 0) {
+    console.log(element);
+    evenNumbers.push(element);
+  }
+}
+
+console.log(evenNumbers);
+
+let todos = [
   {
-    title: "Web Designing Training in Putalisadak, Kathmandu",
-    image:
-      "/static/Images/blog/single_post/Web_Designing_Training_in_Putalisadak_Kathmandu.jpg",
+    title: "html",
+    status: true,
   },
   {
-    title: "Graphic Designing Training in Putalisadak, Kathmandu | Mindrisers",
-    image:
-      "/static/Images/blog/single_post/Graphic_Designing_Training_in_Putalisadak_Kathmandu__Mindrisers.png",
+    title: "css",
+    status: true,
   },
   {
-    title:
-      "Data Science with Python Training in Putalisadak, Kathmandu | Mindrisers",
-    image:
-      "/static/Images/blog/single_post/Data_Science_with_Python_Training_in_Putalisadak_Kathmandu.jpg",
+    title: "js",
+    status: true,
   },
   {
-    title: "UI/UX Training in Putalisadak, Kathmandu | Mindrisers",
-    image:
-      "/static/Images/blog/single_post/UIUX_Training_in_Putalisadak_Kathmandu__Mindrisers.png",
-  },
-  {
-    title: "Flutter Training in Putalisadak, Kathmandu | Mindrisers",
-    image:
-      "/static/Images/blog/single_post/Flutter_Training_in_Putalisadak_Kathmandu_Mindrisers.png",
-  },
-  {
-    title: "DevOps Training in Putalisadak, Kathmandu | Mindrisers",
-    image:
-      "/static/Images/blog/single_post/DevOps_Training_in_Putalisadak_Kathmandu__Mindrisers.png",
+    title: "react",
+    status: false,
   },
 ];
 
-/* TODO: code here . each image in blogs should have websiteUrl attached in its prefix   */
-// console.log(blogs);
+/* console.log(todos[0].title);
+console.log(todos[1].title);
+console.log(todos[2].title);
+console.log(todos[3].title); */
 
-function makeFullUrl(suffixUrl) {
-  return `${websiteUrl}${suffixUrl}`;
+let completedTodos = [];
+
+for (let index = 0; index < todos.length; index++) {
+  if (todos[index].status) {
+    console.log(todos[index].title);
+    completedTodos.push(todos[index]);
+  }
 }
 
-for (let index = 0; index < blogs.length; index++) {
-  //   let fullUrl = `${websiteUrl}${blogs[index].image}`;
-  
-  let fullUrl = makeFullUrl(blogs[index].image);
-  console.log(fullUrl);
+console.log(completedTodos);
 
-  //   blogs[index].image = makeFullUrl(blogs[index].image)
+/* function */
+/* return */
+/* reserach: arrow function */
+/* optional: array.ForEach())*/
+
+function double(input) {
+  return 2 * input;
 }
 
-let courses = [
-  {
-    title: "MERN Stack Training in Nepal",
-    image: "/static/Images/courses/banner/mern-banner-min_nplbrgN.jpg",
-  },
-  {
-    title: "Python with Django Training in Nepal",
-    image: "/static/Images/courses/banner/python-banner-min_7hCoIdR.jpg",
-  },
-  {
-    title: "Digital Marketing Training in Nepal",
-    image:
-      "/static/Images/courses/banner/DIGITAL-MARKETING-banner-min_JBHENk4.webp",
-  },
-  {
-    title: "Quality Assurance Training in Nepal",
-    image: "/static/Images/courses/banner/qa-banner-min_l0DzbAP.jpg",
-  },
-  {
-    title: "Graphic Design Training in Nepal",
-    image: "/static/Images/courses/banner/banner11-min_6ANDad7.png",
-  },
-  {
-    title: "Flutter Training in Nepal",
-    image: "/static/Images/courses/banner/flutter-banner-min_DUDTPdH.jpg",
-  },
-  {
-    title: "DevOps Training in Nepal",
-    image: "/static/Images/courses/banner/DevOps_Training.png",
-  },
-];
-
-
-for (let index = 0; index < courses.length; index++) {
-    //   let fullUrl = `${websiteUrl}${courses[index].image}`;
-
-    //   let fullUrl = makeFullUrl(courses[index].image);
-    //   console.log(fullUrl);
-
-    courses[index].image = makeFullUrl(courses[index].image)
+const triple = (input) => {
+  return 2 * input;
 }
