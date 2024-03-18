@@ -1,31 +1,32 @@
-/* if else */
-/* loop */
-/* function - return */
-
-let numbers = [6, 5, 4, 3, 2, 1, 0];
-let evenNumbers = [];
-
-/* hints
-
-    modolous %
- */
-
-for (let index = 0; index < numbers.length; index++) {
-  if (numbers[index] % 2 === 0) {
-    console.log(numbers[index]);
-    evenNumbers.push(numbers[index]);
-  }
-}
+let numbers = [6, 5, 4];
+numbers.push(3);
 
 for (let index = 0; index < numbers.length; index++) {
   let element = numbers[index];
-  if (element % 2 === 0) {
-    console.log(element);
-    evenNumbers.push(element);
-  }
+  console.log(element);
 }
 
-console.log(evenNumbers);
+/*
+    array function
+      - push
+      - forEach
+
+*/
+
+const printElement = (element) => {
+  console.log(element);
+};
+
+numbers.forEach(printElement);
+
+/* this is same as above */
+numbers.forEach((element) => {
+  console.log(element);
+});
+
+["ram", "shyam", "hari"].forEach((element) => {
+  console.log(element);
+});
 
 let todos = [
   {
@@ -46,31 +47,17 @@ let todos = [
   },
 ];
 
-/* console.log(todos[0].title);
-console.log(todos[1].title);
-console.log(todos[2].title);
-console.log(todos[3].title); */
+let compoltedTodos = [];
 
-let completedTodos = [];
-
-for (let index = 0; index < todos.length; index++) {
-  if (todos[index].status) {
-    console.log(todos[index].title);
-    completedTodos.push(todos[index]);
+todos.forEach((element) => {
+  if (element.status) {
+    compoltedTodos.push(element);
+    console.log(`${element.title} is compolted`);
+  } else {
+    console.log(`${element.title} is pending`);
   }
-}
+});
 
-console.log(completedTodos);
+console.log(compoltedTodos);
 
-/* function */
-/* return */
-/* reserach: arrow function */
-/* optional: array.ForEach())*/
-
-function double(input) {
-  return 2 * input;
-}
-
-const triple = (input) => {
-  return 2 * input;
-}
+/* research: ternary operator // single line if else   */
