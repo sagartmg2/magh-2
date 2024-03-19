@@ -1,63 +1,72 @@
-let numbers = [6, 5, 4];
-numbers.push(3);
+/* research: ternary operator // single line if else   */
 
-for (let index = 0; index < numbers.length; index++) {
-  let element = numbers[index];
-  console.log(element);
-}
-
-/*
-    array function
-      - push
-      - forEach
-
-*/
-
-const printElement = (element) => {
-  console.log(element);
-};
-
-numbers.forEach(printElement);
-
-/* this is same as above */
-numbers.forEach((element) => {
-  console.log(element);
-});
-
-["ram", "shyam", "hari"].forEach((element) => {
-  console.log(element);
-});
-
-let todos = [
+let cartItems = [
   {
-    title: "html",
-    status: true,
+    product: "watch",
+    quantity: 1,
+    rate: 1000,
   },
   {
-    title: "css",
-    status: true,
+    product: "mouse",
+    quantity: 2,
+    rate: 2000,
   },
   {
-    title: "js",
-    status: true,
-  },
-  {
-    title: "react",
-    status: false,
+    product: "keyboard",
+    quantity: -1, // this is negative , so it should be ignored
+    rate: 1000,
   },
 ];
 
-let compoltedTodos = [];
+/* subtotal is 21000 */
+/* loop , each loop, add price of products to subTotal */
 
-todos.forEach((element) => {
-  if (element.status) {
-    compoltedTodos.push(element);
-    console.log(`${element.title} is compolted`);
-  } else {
-    console.log(`${element.title} is pending`);
-  }
+let subtotal = 0;
+
+cartItems.forEach((element) => {
+  subtotal = subtotal + element.rate * element.quantity;
 });
 
-console.log(compoltedTodos);
+console.log(`subtotal is ,${subtotal}`);
 
-/* research: ternary operator // single line if else   */
+let users = [
+  {
+    name: "ram",
+    cartItems: [
+      {
+        product: "watch",
+        quantity: 1,
+        rate: 1000,
+      },
+      {
+        product: "mouse",
+        quantity:-2,
+        rate: 2000,
+      },
+    ],
+  },
+  {
+    name: "hari",
+    cartItems: [
+      {
+        product: "keyboard",
+        quantity: -1,
+        rate: 2000,
+      },
+    ],
+  },
+];
+
+
+users.forEach((user) => {
+  let total = 0;
+
+  user.cartItems.forEach((item) => {
+    total = total + item.rate * item.quantity;
+  });
+
+  console.log(`${user.name} has orderded of rs:${total}`);
+});
+
+/* ram has order of rs:5000  */
+/* hari has order of rs: 2000  */
