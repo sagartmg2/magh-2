@@ -1,34 +1,3 @@
-/* research: ternary operator // single line if else   */
-
-let cartItems = [
-  {
-    product: "watch",
-    quantity: 1,
-    rate: 1000,
-  },
-  {
-    product: "mouse",
-    quantity: 2,
-    rate: 2000,
-  },
-  {
-    product: "keyboard",
-    quantity: -1, // this is negative , so it should be ignored
-    rate: 1000,
-  },
-];
-
-/* subtotal is 21000 */
-/* loop , each loop, add price of products to subTotal */
-
-let subtotal = 0;
-
-cartItems.forEach((element) => {
-  subtotal = subtotal + element.rate * element.quantity;
-});
-
-console.log(`subtotal is ,${subtotal}`);
-
 let users = [
   {
     name: "ram",
@@ -40,7 +9,7 @@ let users = [
       },
       {
         product: "mouse",
-        quantity:-2,
+        quantity: -1,
         rate: 2000,
       },
     ],
@@ -50,19 +19,21 @@ let users = [
     cartItems: [
       {
         product: "keyboard",
-        quantity: -1,
+        quantity: -1, // ingore negative ones
         rate: 2000,
       },
     ],
   },
 ];
 
-
 users.forEach((user) => {
   let total = 0;
 
   user.cartItems.forEach((item) => {
-    total = total + item.rate * item.quantity;
+    /*  if(item.quantity>0){
+      total = total + item.rate * item.quantity;
+    } */
+    total = total + (item.quantity > 0 ? item.quantity * item.rate : 0);
   });
 
   console.log(`${user.name} has orderded of rs:${total}`);
@@ -70,3 +41,47 @@ users.forEach((user) => {
 
 /* ram has order of rs:5000  */
 /* hari has order of rs: 2000  */
+
+/* ternary operator */
+/* just like forEach we have .filter , .map , .find .... */
+
+let todos = [
+  { title: "html", status: true },
+  { title: "css", status: true },
+  { title: "react", status: false },
+  { title: "express", status: false },
+];
+
+let completedTodos = [];
+/* 
+ completedTodos = [
+  { title: "html", status: true },
+  { title: "css", status: true },
+];
+*/
+// .filter() // reserach
+
+let modifiedTodos = []
+/* 
+ modifiedTodos = [
+  { title: "html", status: "compolted" },
+  { title: "css", status: "compolted" },
+  { title: "react", status: "pending" },
+  { title: "express", status: "pending" },
+]; */
+// .map() // reserach
+
+
+
+
+todos.forEach((todo) => {
+  /*
+   if (todo.status) {
+    console.log(`${todo.title} is compleed`);
+  } else {
+    console.log(`${todo.title} is pending`);
+  } 
+  */
+
+  console.log(`${todo.title} is ${todo.status ? "complted" : "pending"}`);
+});
